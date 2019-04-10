@@ -1,9 +1,0 @@
-/Users/mikhailklimenko/RiderProjects/ChessEngine/GameLogic/bin/Debug/GameLogic.exe
-/Users/mikhailklimenko/RiderProjects/ChessEngine/GameLogic/bin/Debug/GameLogic.pdb
-/Users/mikhailklimenko/RiderProjects/ChessEngine/GameLogic/bin/Debug/CoreLogic.exe
-/Users/mikhailklimenko/RiderProjects/ChessEngine/GameLogic/bin/Debug/CoreLogic.pdb
-/Users/mikhailklimenko/RiderProjects/ChessEngine/GameLogic/obj/Debug/GameLogic.csprojAssemblyReference.cache
-/Users/mikhailklimenko/RiderProjects/ChessEngine/GameLogic/obj/Debug/GameLogic.csproj.CoreCompileInputs.cache
-/Users/mikhailklimenko/RiderProjects/ChessEngine/GameLogic/obj/Debug/GameLogic.csproj.CopyComplete
-/Users/mikhailklimenko/RiderProjects/ChessEngine/GameLogic/obj/Debug/GameLogic.exe
-/Users/mikhailklimenko/RiderProjects/ChessEngine/GameLogic/obj/Debug/GameLogic.pdb

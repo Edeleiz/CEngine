@@ -1,6 +1,0 @@
-/Users/mikhailklimenko/RiderProjects/ChessEngine/ChessEngine/bin/Debug/ChessEngine.exe
-/Users/mikhailklimenko/RiderProjects/ChessEngine/ChessEngine/bin/Debug/ChessEngine.pdb
-/Users/mikhailklimenko/RiderProjects/ChessEngine/ChessEngine/obj/Debug/ChessEngine.csprojAssemblyReference.cache
-/Users/mikhailklimenko/RiderProjects/ChessEngine/ChessEngine/obj/Debug/ChessEngine.csproj.CoreCompileInputs.cache
-/Users/mikhailklimenko/RiderProjects/ChessEngine/ChessEngine/obj/Debug/ChessEngine.exe
-/Users/mikhailklimenko/RiderProjects/ChessEngine/ChessEngine/obj/Debug/ChessEngine.pdb
