@@ -1,4 +1,4 @@
-namespace CEngine.Game.Stats
+namespace CGame.Game.Stats
 {
     public enum StatType
     {

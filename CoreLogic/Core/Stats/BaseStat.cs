@@ -12,7 +12,12 @@ namespace CEngine.Core.Stats
     /// <typeparam name="TK">Enum used for defining different stat types</typeparam>
     public abstract class BaseStat<T, TK> : IStat<T, TK> where TK : Enum
     {
-        protected Func<T, T, T> _addValues;
+        /// <summary>
+        /// Function for adding stat value with modifier, where
+        /// first argument is Value, second Modifier Value.
+        /// Returns the product of adding.
+        /// </summary>
+        protected Func<T, T, T> AddValues;
 
         /// <summary>
         /// Initial setup of the stat
@@ -29,15 +34,15 @@ namespace CEngine.Core.Stats
             Type = type;
         }
         
-        public string Name { get; protected set; }
-        public T Value { get; protected set; }
-        public T ModifiedValue { get; protected set; }
+        public string Name { get; }
+        public T Value { get; }
+        public T ModifiedValue { get; private set; }
 
         List<IModifier> IStat.Modifiers => GetModifiersWithoutType();
 
-        public List<IModifier<T>> Modifiers { get; protected set; }
+        public List<IModifier<T>> Modifiers { get; }
 
-        public TK Type { get; protected set; }
+        public TK Type { get; }
 
         object IStat.Value => Value;
         object IStat.ModifiedValue => ModifiedValue;
@@ -78,8 +83,8 @@ namespace CEngine.Core.Stats
                 switch (modifier.Type)
                 {
                     case ModifierType.Relative:
-                        if (_addValues != null)
-                            result = _addValues(result, modifier.Value);
+                        if (AddValues != null)
+                            result = AddValues(result, modifier.Value);
                         break;
                     case ModifierType.Absolute:
                         result = modifier.Value;

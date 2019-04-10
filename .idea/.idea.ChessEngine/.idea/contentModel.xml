@@ -10,6 +10,7 @@
         <e p="Core" t="Include">
           <e p="Stats" t="Include">
             <e p="BaseStat.cs" t="Include" />
+            <e p="FloatStat.cs" t="Include" />
             <e p="Modifiers" t="Include">
               <e p="StatModifier.cs" t="Include" />
             </e>
@@ -35,7 +36,6 @@
             <e p="IUnitStats.cs" t="Include" />
             <e p="Modifiers" t="Include">
               <e p="IModifier.cs" t="Include" />
-              <e p="ModifierType.cs" t="Include" />
             </e>
           </e>
         </e>
@@ -50,10 +50,12 @@
         <e p="Game" t="Include">
           <e p="Effects" t="Include" />
           <e p="Stats" t="Include">
+            <e p="Enum" t="Include">
+              <e p="StatType.cs" t="Include" />
+            </e>
             <e p="Modifiers" t="Include">
               <e p="Modifiers.cs" t="Include" />
             </e>
-            <e p="StatType.cs" t="Include" />
             <e p="UnitStats.cs" t="Include" />
           </e>
         </e>
