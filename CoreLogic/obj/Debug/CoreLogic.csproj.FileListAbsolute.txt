@@ -1,0 +1,6 @@
+/Users/mikhailklimenko/RiderProjects/ChessEngine/CoreLogic/bin/Debug/CoreLogic.exe
+/Users/mikhailklimenko/RiderProjects/ChessEngine/CoreLogic/bin/Debug/CoreLogic.pdb
+/Users/mikhailklimenko/RiderProjects/ChessEngine/CoreLogic/obj/Debug/CoreLogic.csprojAssemblyReference.cache
+/Users/mikhailklimenko/RiderProjects/ChessEngine/CoreLogic/obj/Debug/CoreLogic.csproj.CoreCompileInputs.cache
+/Users/mikhailklimenko/RiderProjects/ChessEngine/CoreLogic/obj/Debug/CoreLogic.exe
+/Users/mikhailklimenko/RiderProjects/ChessEngine/CoreLogic/obj/Debug/CoreLogic.pdb
