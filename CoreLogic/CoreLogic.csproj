@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Stats\BaseStat.cs" />
+    <Compile Include="Core\Stats\FloatStat.cs" />
     <Compile Include="Core\Stats\Modifiers\StatModifier.cs" />
     <Compile Include="Core\Units\Unit.cs" />
     <Compile Include="Interfaces\Effects\IEffect.cs" />
@@ -49,7 +50,6 @@
     <Compile Include="Interfaces\Stats\IStats.cs" />
     <Compile Include="Interfaces\Stats\IUnitStats.cs" />
     <Compile Include="Interfaces\Stats\Modifiers\IModifier.cs" />
-    <Compile Include="Interfaces\Stats\Modifiers\ModifierType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,30 +1,16 @@
 using CEngine.Core.Stats;
 
-namespace CEngine.Game.Stats
+namespace CGame.Game.Stats
 {
     /// <inheritdoc />
-    public class AttackStat : BaseStat<float, StatType>
+    public class AttackStat : FloatStat<StatType>
     {
-        public AttackStat(float value) : base(StatType.Attack.ToString(), value, StatType.Attack)
-        {
-            _addValues = (val, mod) => val + mod;
-        }  
+        public AttackStat(float value) : base(StatType.Attack.ToString(), value, StatType.Attack) {} 
     }
 
     /// <inheritdoc />
-    public class HealthStat : BaseStat<float, StatType>
+    public class HealthStat : FloatStat<StatType>
     {
-        public HealthStat(float value) : base(StatType.Health.ToString(), value, StatType.Health)
-        {
-            _addValues = (val, mod) => val + mod;
-        }  
-    }
-
-    static class ModifyFunctions
-    {
-        private static void AddFloat(float value, float modifier)
-        {
-            
-        }
+        public HealthStat(float value) : base(StatType.Health.ToString(), value, StatType.Health) {}  
     }
 }

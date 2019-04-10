@@ -43,6 +43,6 @@ namespace CEngine.Interfaces.Stats
         new T Value { get; }
         new T ModifiedValue { get; }
         TK Type { get; }
-        List<IModifier<T>> Modifiers { get; }
+        new List<IModifier<T>> Modifiers { get; }
     }
 }

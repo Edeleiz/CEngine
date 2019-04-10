@@ -1,8 +1,8 @@
 ﻿using System;
-using CEngine.Game.Stats;
 using CEngine.Interfaces.Stats;
+using CGame.Game.Stats;
 
-namespace CEngine
+namespace CGame
 {
     internal class Program
     {
