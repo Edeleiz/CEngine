@@ -27,7 +27,7 @@ namespace CEngine.Core.Stats
         /// <param name="type">Type of stat in <typeparamref name="T"/></param>
         protected BaseStat(string name, T value, TK type)
         {
-            Modifiers = new List<IModifier<T>>();
+            Modifiers = new List<IModifier<T, TK>>();
             Name = name;
             Value = value;
             ModifiedValue = Value;
@@ -40,7 +40,7 @@ namespace CEngine.Core.Stats
 
         List<IModifier> IStat.Modifiers => GetModifiersWithoutType();
 
-        public List<IModifier<T>> Modifiers { get; }
+        public List<IModifier<T, TK>> Modifiers { get; }
 
         public TK Type { get; }
 

@@ -3,7 +3,7 @@ using CEngine.Interfaces.Stats;
 
 namespace CEngine.Core.Stats
 {
-    public abstract class StatModifier <T, TK> : IModifier<T> where TK : Enum
+    public abstract class StatModifier <T, TK> : IModifier<T, TK> where TK : Enum
     {
         protected StatModifier(T value, TK statType, ModifierType type, ModifierApplyType applyType)
         {
@@ -14,6 +14,7 @@ namespace CEngine.Core.Stats
         }
         
         public TK StatType { get; }
+        Enum IModifier.StatType => StatType;
 
         public ModifierType Type { get; }
         public ModifierApplyType ApplyType { get; }

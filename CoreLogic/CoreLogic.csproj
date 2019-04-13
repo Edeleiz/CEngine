@@ -39,11 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Effects\BaseEffect.cs" />
+    <Compile Include="Core\Effects\EffectController.cs" />
+    <Compile Include="Core\Objects\GameObject.cs" />
+    <Compile Include="Core\Objects\Unit.cs" />
     <Compile Include="Core\Stats\BaseStat.cs" />
     <Compile Include="Core\Stats\FloatStat.cs" />
     <Compile Include="Core\Stats\Modifiers\StatModifier.cs" />
-    <Compile Include="Core\Units\Unit.cs" />
+    <Compile Include="Core\Stats\Stats.cs" />
+    <Compile Include="Interfaces\Abilities\IAbility.cs" />
     <Compile Include="Interfaces\Effects\IEffect.cs" />
+    <Compile Include="Interfaces\Effects\IEffectController.cs" />
     <Compile Include="Interfaces\Objects\IGameObject.cs" />
     <Compile Include="Interfaces\Objects\Units\IUnit.cs" />
     <Compile Include="Interfaces\Stats\IStat.cs" />

@@ -38,11 +38,11 @@ namespace CEngine.Interfaces.Stats
     /// </summary>
     /// <typeparam name="T">Variable type of the stat</typeparam>
     /// <typeparam name="TK">Enum used for defining different stat types</typeparam>
-    public interface IStat<T, out TK> : IStat where TK : Enum
+    public interface IStat<T, TK> : IStat where TK : Enum
     {
         new T Value { get; }
         new T ModifiedValue { get; }
         TK Type { get; }
-        new List<IModifier<T>> Modifiers { get; }
+        new List<IModifier<T, TK>> Modifiers { get; }
     }
 }

@@ -1,3 +1,5 @@
+using System;
+
 namespace CEngine.Interfaces.Stats
 {
     public enum ModifierType
@@ -14,12 +16,18 @@ namespace CEngine.Interfaces.Stats
     
     public interface IModifier
     {
+        Enum StatType { get; }
         ModifierType Type { get; }
         ModifierApplyType ApplyType { get; }
         object Value { get; }
     }
 
-    public interface IModifier<out T> : IModifier
+    public interface IModifier<out T> : IModifier where T : Enum
+    {
+        new T StatType { get; }
+    }
+
+    public interface IModifier<out T, out TK> : IModifier<TK> where TK : Enum
     {
         new T Value { get; }
     }
