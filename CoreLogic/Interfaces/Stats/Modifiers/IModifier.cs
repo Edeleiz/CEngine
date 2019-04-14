@@ -2,13 +2,13 @@ using System;
 
 namespace CEngine.Interfaces.Stats
 {
-    public enum ModifierType
+    public enum ModifierApplyType
     {
         Relative,
         Absolute
     }
 
-    public enum ModifierApplyType
+    public enum ModifierDurationType
     {
         Temporary,
         Constant
@@ -17,8 +17,9 @@ namespace CEngine.Interfaces.Stats
     public interface IModifier
     {
         Enum StatType { get; }
-        ModifierType Type { get; }
+        Enum ModifierType { get; }
         ModifierApplyType ApplyType { get; }
+        ModifierDurationType DurationType { get; }
         object Value { get; }
     }
 
@@ -30,5 +31,10 @@ namespace CEngine.Interfaces.Stats
     public interface IModifier<out T, out TK> : IModifier<TK> where TK : Enum
     {
         new T Value { get; }
+    }
+
+    public interface ITypedModifier<out T> : IModifier where T : Enum
+    {
+        new T ModifierType { get; }
     }
 }

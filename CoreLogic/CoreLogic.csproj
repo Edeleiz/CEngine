@@ -46,6 +46,7 @@
     <Compile Include="Core\Stats\BaseStat.cs" />
     <Compile Include="Core\Stats\FloatStat.cs" />
     <Compile Include="Core\Stats\Modifiers\StatModifier.cs" />
+    <Compile Include="Core\Stats\Modifiers\TypedStatModifier.cs" />
     <Compile Include="Core\Stats\Stats.cs" />
     <Compile Include="Interfaces\Abilities\IAbility.cs" />
     <Compile Include="Interfaces\Effects\IEffect.cs" />

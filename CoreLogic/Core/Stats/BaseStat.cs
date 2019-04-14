@@ -80,13 +80,13 @@ namespace CEngine.Core.Stats
             var result = Value;
             foreach (var modifier in Modifiers)
             {
-                switch (modifier.Type)
+                switch (modifier.ApplyType)
                 {
-                    case ModifierType.Relative:
+                    case ModifierApplyType.Relative:
                         if (AddValues != null)
                             result = AddValues(result, modifier.Value);
                         break;
-                    case ModifierType.Absolute:
+                    case ModifierApplyType.Absolute:
                         result = modifier.Value;
                         break;
                     default:

@@ -6,6 +6,16 @@ namespace CEngine.Core.Effects
 {
     public class BaseEffect : IEffect
     {
+        protected BaseEffect()
+        {
+            Modifiers = new List<IModifier>();
+        }
+        
         public List<IModifier> Modifiers { get; }
+
+        protected void AddModifier(IModifier modifier)
+        {
+            Modifiers.Add(modifier);
+        }
     }
 }

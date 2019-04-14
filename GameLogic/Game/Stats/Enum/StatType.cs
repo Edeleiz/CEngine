@@ -5,4 +5,10 @@ namespace CGame.Game.Stats
         Attack,
         Health
     }
+
+    public enum UnitStatType
+    {
+        CurrentHealth,
+        CurrentMana
+    }
 }

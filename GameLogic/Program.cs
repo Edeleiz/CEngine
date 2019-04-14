@@ -1,4 +1,5 @@
 ﻿using System;
+using CEngine.Core.Objects;
 using CEngine.Interfaces.Stats;
 using CGame.Game.Stats;
 
@@ -18,6 +19,9 @@ namespace CGame
             Console.Write(stat.ModifiedValue);
             var inter = (IStat) stat;
             Console.Write(inter.ModifiedValue);
+
+            var unit = new Unit();
+            
         }
     }
 }

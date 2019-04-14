@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Game\Effects\BaseEffect.cs" />
+    <Compile Include="Game\Effects\BasicAttackEffect.cs" />
     <Compile Include="Game\Effects\EffectType.cs" />
     <Compile Include="Game\Stats\Enum\StatType.cs" />
     <Compile Include="Game\Stats\Modifiers\Modifiers.cs" />
