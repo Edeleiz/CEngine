@@ -19,6 +19,8 @@ namespace CEngine.Core.Stats
         /// </summary>
         protected Func<T, T, T> AddValues;
 
+        private IStat<T, TK> _statImplementation;
+
         /// <summary>
         /// Initial setup of the stat
         /// </summary>
@@ -33,7 +35,7 @@ namespace CEngine.Core.Stats
             ModifiedValue = Value;
             Type = type;
         }
-        
+
         public string Name { get; }
         public T Value { get; }
         public T ModifiedValue { get; private set; }
@@ -44,6 +46,7 @@ namespace CEngine.Core.Stats
 
         public TK Type { get; }
 
+        Enum IStat.Type => Type;
         object IStat.Value => Value;
         object IStat.ModifiedValue => ModifiedValue;
 

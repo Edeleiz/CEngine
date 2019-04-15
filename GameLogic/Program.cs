@@ -19,9 +19,6 @@ namespace CGame
             Console.Write(stat.ModifiedValue);
             var inter = (IStat) stat;
             Console.Write(inter.ModifiedValue);
-
-            var unit = new Unit();
-            
         }
     }
 }

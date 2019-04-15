@@ -8,6 +8,8 @@ namespace CEngine.Interfaces.Stats
     /// </summary>
     public interface IStat
     {
+        Enum Type { get; }
+        
         /// <summary>
         /// Stat's unique name
         /// </summary>
@@ -42,7 +44,7 @@ namespace CEngine.Interfaces.Stats
     {
         new T Value { get; }
         new T ModifiedValue { get; }
-        TK Type { get; }
+        new TK Type { get; }
         new List<IModifier<T, TK>> Modifiers { get; }
     }
 }

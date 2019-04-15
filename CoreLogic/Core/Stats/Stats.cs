@@ -8,12 +8,14 @@ namespace CEngine.Core.Stats
     {
         public Stats()
         {
-            
+            List = new List<IStat>();
         }
-        
-        public Enum Type { get; }
-        public List<IStat> List { get; }
-        
+        private List<IStat> List { get; }
+
+        public T Type { get; }
+
+        Enum IStats.Type => Type;
+
         public void ApplyModifier(IModifier modifier)
         {
             throw new NotImplementedException();
@@ -30,6 +32,16 @@ namespace CEngine.Core.Stats
         }
 
         public void RemoveModifiers(IModifier modifier)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IStat GetStat(Enum type)
+        {
+            return GetStat((T) type);
+        }
+
+        public void AddStat(IStat stat)
         {
             throw new NotImplementedException();
         }
@@ -52,6 +64,24 @@ namespace CEngine.Core.Stats
         public void RemoveModifiers(IModifier<T> modifier)
         {
             throw new NotImplementedException();
+        }
+
+        public IStat GetStat(T type)
+        {
+            foreach (var stat in List)
+            {
+                if (Equals(stat.Type, type))
+                {
+                    return stat;
+                }
+            }
+
+            return null;
+        }
+
+        public IStat<TK, T> GetStat<TK>(T type)
+        {
+            return (IStat<TK, T>) GetStat(type);
         }
     }
 }
