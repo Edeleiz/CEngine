@@ -41,6 +41,8 @@
   <ItemGroup>
     <Compile Include="Game\Effects\BasicAttackEffect.cs" />
     <Compile Include="Game\Effects\EffectType.cs" />
+    <Compile Include="Game\Objects\TestUnit.cs" />
+    <Compile Include="Game\Resists\DamageResists.cs" />
     <Compile Include="Game\Stats\Enum\StatType.cs" />
     <Compile Include="Game\Stats\Modifiers\Modifiers.cs" />
     <Compile Include="Game\Stats\UnitStats.cs" />

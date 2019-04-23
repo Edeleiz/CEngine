@@ -4,14 +4,14 @@ using CEngine.Core.Stats;
 namespace CGame.Game.Stats
 {
     /// <inheritdoc />
-    public class AttackStat : FloatStat<StatType>
+    public class AttackTypedStat : FloatTypedStat<StatType>
     {
-        public AttackStat(float value) : base(StatType.Attack.ToString(), value, StatType.Attack) {}
+        public AttackTypedStat(float value) : base(StatType.Attack.ToString(), value, StatType.Attack) {}
     }
 
     /// <inheritdoc />
-    public class HealthStat : FloatStat<StatType>
+    public class HealthTypedStat : FloatTypedStat<StatType>
     {
-        public HealthStat(float value) : base(StatType.Health.ToString(), value, StatType.Health) {}
+        public HealthTypedStat(float value) : base(StatType.Health.ToString(), value, StatType.Health) {}
     }
 }

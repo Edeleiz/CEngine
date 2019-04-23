@@ -9,10 +9,10 @@ namespace CEngine.Interfaces.Objects
     {
         int X { get; set; }
         int Y { get; set; }
-        List<IStats> Stats { get; }
+        List<IStatController> Stats { get; }
         IEffectController EffectController { get; }
         
-        IStats<T> GetStats<T>() where T : Enum;
-        IStats GetStats(Enum type);
+        IStatController<T> GetStats<T>() where T : Enum;
+        IStatController GetStats(Enum type);
     }
 }

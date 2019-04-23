@@ -30,8 +30,18 @@ namespace CEngine.Interfaces.Stats
         /// </summary>
         List<IModifier> Modifiers { get; }
 
+        IStat<TS> ToStatType<TS>() where TS : Enum;
+        ITypedStat<T, TS> ToStatType<T, TS>() where TS : Enum;
+
         void AddModifier(IModifier modifier);
         void RemoveModifier(IModifier modifier);
+    }
+
+    /// <inheritdoc />
+    /// <typeparam name="T">Enum used for defining different stat types</typeparam>
+    public interface IStat<out T> : IStat where T : Enum
+    {
+        new T Type { get; }
     }
 
     /// <inheritdoc />
@@ -40,11 +50,10 @@ namespace CEngine.Interfaces.Stats
     /// </summary>
     /// <typeparam name="T">Variable type of the stat</typeparam>
     /// <typeparam name="TK">Enum used for defining different stat types</typeparam>
-    public interface IStat<T, TK> : IStat where TK : Enum
+    public interface ITypedStat<T, TK> : IStat<TK> where TK : Enum
     {
         new T Value { get; }
         new T ModifiedValue { get; }
-        new TK Type { get; }
         new List<IModifier<T, TK>> Modifiers { get; }
     }
 }

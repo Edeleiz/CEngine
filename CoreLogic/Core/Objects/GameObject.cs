@@ -12,19 +12,19 @@ namespace CEngine.Core.Objects
         protected GameObject()
         {
             EffectController = new EffectController(this);
-            Stats = new List<IStats>();
+            Stats = new List<IStatController>();
         }
         
         public int X { get; set; }
         public int Y { get; set; }
-        public List<IStats> Stats { get; }
+        public List<IStatController> Stats { get; }
         public IEffectController EffectController { get; }
         
-        public IStats<T> GetStats<T>() where T : Enum
+        public IStatController<T> GetStats<T>() where T : Enum
         {
             foreach (var statList in Stats)
             {
-                if (statList is IStats<T> list)
+                if (statList is IStatController<T> list)
                 {
                     return list;
                 }
@@ -33,11 +33,11 @@ namespace CEngine.Core.Objects
             return null;
         }
 
-        public IStats GetStats(Enum type)
+        public IStatController GetStats(Enum type)
         {
             foreach (var statList in Stats)
             {
-                if (Equals(statList.Type, type))
+                if (Equals(statList.StatType, type))
                 {
                     return statList;
                 }

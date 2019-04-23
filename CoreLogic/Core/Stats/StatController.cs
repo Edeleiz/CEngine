@@ -4,17 +4,18 @@ using CEngine.Interfaces.Stats;
 
 namespace CEngine.Core.Stats
 {
-    public class Stats<T> : IStats<T> where T : Enum
+    public class StatController<T> : IStatController<T> where T : Enum
     {
-        public Stats()
+        public StatController()
         {
-            List = new List<IStat>();
+            List = new List<IStat<T>>();
+            StatType = typeof(T);
         }
-        private List<IStat> List { get; }
+        private List<IStat<T>> List { get; }
 
-        public T Type { get; }
+        public Action<IStat> OnStatChange { get; set; }
 
-        Enum IStats.Type => Type;
+        public Type StatType { get; }
 
         public void ApplyModifier(IModifier modifier)
         {
@@ -43,7 +44,12 @@ namespace CEngine.Core.Stats
 
         public void AddStat(IStat stat)
         {
-            throw new NotImplementedException();
+            if (stat.Type.GetType() != typeof(T))
+            {
+                return;
+            }
+            
+            AddStat((IStat<T>) stat);
         }
 
         public void ApplyModifier(IModifier<T> modifier)
@@ -66,7 +72,7 @@ namespace CEngine.Core.Stats
             throw new NotImplementedException();
         }
 
-        public IStat GetStat(T type)
+        public IStat<T> GetStat(T type)
         {
             foreach (var stat in List)
             {
@@ -79,9 +85,14 @@ namespace CEngine.Core.Stats
             return null;
         }
 
-        public IStat<TK, T> GetStat<TK>(T type)
+        public ITypedStat<TK, T> GetStat<TK>(T type)
         {
-            return (IStat<TK, T>) GetStat(type);
+            return (ITypedStat<TK, T>) GetStat(type);
+        }
+
+        public void AddStat(IStat<T> stat)
+        {
+            List.Add(stat);
         }
     }
 }

@@ -1,7 +1,7 @@
 using System;
 using CEngine.Interfaces.Stats;
 
-namespace CEngine.Interfaces.Objects
+namespace CEngine.Interfaces.Resists
 {
     /// <summary>
     /// Resist against specific type of damage
@@ -29,6 +29,8 @@ namespace CEngine.Interfaces.Objects
         /// <param name="damage">Incoming damage</param>
         /// <returns>Damage after reduction</returns>
         float Reduce(float damage);
+        
+        int Priority { get; }
     }
 
     /// <inheritdoc />

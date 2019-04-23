@@ -10,7 +10,7 @@ namespace CEngine.Core.Stats
     /// </summary>
     /// <typeparam name="T">Variable type of the stat</typeparam>
     /// <typeparam name="TK">Enum used for defining different stat types</typeparam>
-    public abstract class BaseStat<T, TK> : IStat<T, TK> where TK : Enum
+    public abstract class BaseTypedStat<T, TK> : ITypedStat<T, TK> where TK : Enum
     {
         /// <summary>
         /// Function for adding stat value with modifier, where
@@ -19,15 +19,13 @@ namespace CEngine.Core.Stats
         /// </summary>
         protected Func<T, T, T> AddValues;
 
-        private IStat<T, TK> _statImplementation;
-
         /// <summary>
         /// Initial setup of the stat
         /// </summary>
         /// <param name="name">Custom name for stat</param>
         /// <param name="value">Initial value</param>
         /// <param name="type">Type of stat in <typeparamref name="T"/></param>
-        protected BaseStat(string name, T value, TK type)
+        protected BaseTypedStat(string name, T value, TK type)
         {
             Modifiers = new List<IModifier<T, TK>>();
             Name = name;
@@ -106,6 +104,27 @@ namespace CEngine.Core.Stats
             foreach (var mod in Modifiers)
                 result.Add(mod);
             return result;
+        }
+        
+        public IStat<TS> ToStatType<TS>() where TS : Enum
+        {
+            if (typeof(TS) == typeof(TK))
+            {
+                return (IStat<TS>) this;
+            }
+
+            return null;
+        }
+
+        public ITypedStat<TT, TS> ToStatType<TT, TS>() where TS : Enum
+        {
+            if (typeof(TS) == typeof(TK) &&
+                typeof(TT) == typeof(T))
+            {
+                return (ITypedStat<TT, TS>) this;
+            }
+
+            return null;
         }
     }
 }

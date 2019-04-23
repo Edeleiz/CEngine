@@ -1,6 +1,6 @@
 namespace CEngine.Interfaces.Stats
 {
-    public interface IUnitStats : IStats
+    public interface IUnitStatController : IStatController
     {
         
     }

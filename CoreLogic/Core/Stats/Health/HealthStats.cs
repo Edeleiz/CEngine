@@ -2,8 +2,8 @@ using CEngine.Core.Objects;
 
 namespace CEngine.Core.Stats
 {
-    public class MaxHealthStat : FloatStat<HealthStatType>
+    public class MaxHealthTypedStat : FloatTypedStat<HealthStatType>
     {
-        protected MaxHealthStat(string name, float value, HealthStatType type) : base(name, value, type){}
+        public MaxHealthTypedStat(float value) : base(HealthStatType.MaxHealth.ToString(), value, HealthStatType.MaxHealth){}
     }
 }

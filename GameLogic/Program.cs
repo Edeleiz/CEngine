@@ -1,6 +1,8 @@
 ﻿using System;
 using CEngine.Core.Objects;
 using CEngine.Interfaces.Stats;
+using CGame.Game.Objects;
+using CGame.Game.Resists;
 using CGame.Game.Stats;
 
 namespace CGame
@@ -9,7 +11,7 @@ namespace CGame
     {
         public static void Main(string[] args)
         {
-            var stat = new AttackStat(5.0f);
+            var stat = new AttackTypedStat(5.0f);
             var mod = new AttackModifier(1.0f);
             var mod2 = new AttackModifier(-3.0f);
             var mod3 = new AttackModifier(13.0f);
@@ -19,6 +21,12 @@ namespace CGame
             Console.Write(stat.ModifiedValue);
             var inter = (IStat) stat;
             Console.Write(inter.ModifiedValue);
+
+            var unit = new TestUnit();
+            unit.HealthController.ApplyDamage(100f, DamageType.Basic);
+            unit.DebugInfo();
+            unit.HealthController.ApplyDamage(100f, DamageType.Magical);
+            unit.DebugInfo();
         }
     }
 }
