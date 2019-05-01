@@ -4,11 +4,14 @@ namespace CEngine.Interfaces.Objects.Components
 {
     public interface IDamageable
     {
-        IHealthController HealthController { get; }
+        float CurrentHealth { get; }
+        float MaxHealth { get; }
+        
+        float ApplyDamage(float damage, object damageType);
     }
     
-    public interface IDamageable<T, TK> where TK : Enum where T : Enum
+    public interface IDamageable<in T> : IDamageable where T : Enum
     {
-        IHealthController<T, TK> HealthController { get; }
+        float ApplyDamage(float damage, T damageType);
     }
 }

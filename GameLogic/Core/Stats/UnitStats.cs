@@ -1,7 +1,6 @@
-using System;
 using CEngine.Core.Stats;
 
-namespace CGame.Game.Stats
+namespace CGame.Core.Stats
 {
     /// <inheritdoc />
     public class AttackTypedStat : FloatTypedStat<StatType>

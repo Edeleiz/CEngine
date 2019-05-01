@@ -21,7 +21,7 @@ namespace CEngine.Core.Effects
         {
             foreach (var modifier in effect.Modifiers)
             {
-                var stats = Owner.GetStats(modifier.StatType);
+                var stats = Owner.GetStats(modifier.StatType.GetType());
                 stats.ApplyModifier(modifier);
             }
             
@@ -37,7 +37,7 @@ namespace CEngine.Core.Effects
             
             foreach (var modifier in effect.Modifiers)
             {
-                var stats = Owner.GetStats(modifier.StatType);
+                var stats = Owner.GetStats(modifier.StatType.GetType());
                 stats.RemoveModifier(modifier);
             }
 

@@ -8,6 +8,9 @@ using CEngine.Interfaces.Stats;
 
 namespace CEngine.Core.Objects
 {
+    /// <summary>
+    /// Health stat types
+    /// </summary>
     public enum HealthStatType
     {
         MaxHealth
@@ -21,6 +24,9 @@ namespace CEngine.Core.Objects
     {
         IStatController IHealthController.StatController => StatController;
 
+        /// <summary>
+        /// Current health. Can not be greater than Max Health
+        /// </summary>
         public float CurrentHealth { get; private set; }
 
         public float MaxHealth => StatController.GetStat<float>(HealthStatType.MaxHealth).Value;
@@ -122,6 +128,11 @@ namespace CEngine.Core.Objects
             {
                 CurrentHealth = MaxHealth;
             }
+        }
+
+        public override string ToString()
+        {
+            return CurrentHealth + "/" + MaxHealth;
         }
     }
 }

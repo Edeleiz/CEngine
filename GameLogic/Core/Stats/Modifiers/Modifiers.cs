@@ -1,7 +1,7 @@
 using CEngine.Core.Stats;
 using CEngine.Interfaces.Stats;
 
-namespace CGame.Game.Stats
+namespace CGame.Core.Stats
 {
     public enum ModifierType
     {

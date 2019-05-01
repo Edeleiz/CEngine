@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using CEngine.Core.Effects;
 using CEngine.Interfaces.Effects;
 using CEngine.Interfaces.Objects;
@@ -9,20 +10,22 @@ namespace CEngine.Core.Objects
 {
     public class GameObject : IGameObject
     {
+        protected List<IStatController> _stats;
+        
         protected GameObject()
         {
             EffectController = new EffectController(this);
-            Stats = new List<IStatController>();
+            _stats = new List<IStatController>();
         }
         
         public int X { get; set; }
         public int Y { get; set; }
-        public List<IStatController> Stats { get; }
+
         public IEffectController EffectController { get; }
         
         public IStatController<T> GetStats<T>() where T : Enum
         {
-            foreach (var statList in Stats)
+            foreach (var statList in _stats)
             {
                 if (statList is IStatController<T> list)
                 {
@@ -33,17 +36,27 @@ namespace CEngine.Core.Objects
             return null;
         }
 
-        public IStatController GetStats(Enum type)
+        public IStatController GetStats(Type type)
         {
-            foreach (var statList in Stats)
+            foreach (var statList in _stats)
             {
-                if (Equals(statList.StatType, type))
+                if (statList.StatType == type)
                 {
                     return statList;
                 }
             }
 
             return null;
+        }
+
+        public IList<IStatController> GetStatsList()
+        {
+            return _stats.AsReadOnly();
+        }
+
+        public virtual void Update(float timePassed)
+        {
+            
         }
     }
 }

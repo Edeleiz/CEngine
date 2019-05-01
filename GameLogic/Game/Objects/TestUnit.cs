@@ -1,15 +1,14 @@
 using System;
 using CEngine.Core.Objects;
-using CGame.Game.Resists;
+using CGame.Core.Objects;
+using CGame.Core.Resists;
 
 namespace CGame.Game.Objects
 {
-    public class TestUnit : Unit<DamageType>
+    public class TestUnit : BaseUnit
     {
         public TestUnit()
         {
-            HealthController = new HealthController<DamageType>(500);
-            HealthController.AddResist(new ArmorResist(0.43f));
         }
 
         public void DebugInfo()
@@ -18,6 +17,18 @@ namespace CGame.Game.Objects
             Console.Write(HealthController.MaxHealth);
             Console.Write("\n");
             Console.Write(HealthController.CurrentHealth);
+        }
+
+        protected override void InitHealthController(float baseHp)
+        {
+            HealthController = new HealthController<DamageType>(500);
+            HealthController.AddResist(new ArmorResist(0.43f));
+        }
+
+        protected override BaseUnitProperties GetProps(BaseUnitProperties props)
+        {
+            props.BaseHp = 500;
+            return props;
         }
     }
 }

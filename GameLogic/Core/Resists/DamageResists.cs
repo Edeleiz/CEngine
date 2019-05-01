@@ -1,7 +1,6 @@
 using CEngine.Core.Resists;
-using CEngine.Interfaces.Stats;
 
-namespace CGame.Game.Resists
+namespace CGame.Core.Resists
 {
     public enum DamageType
     {

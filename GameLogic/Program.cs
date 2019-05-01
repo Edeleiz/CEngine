@@ -1,9 +1,10 @@
 ﻿using System;
 using CEngine.Core.Objects;
 using CEngine.Interfaces.Stats;
+using CGame.Core.Objects;
+using CGame.Core.Resists;
+using CGame.Core.Stats;
 using CGame.Game.Objects;
-using CGame.Game.Resists;
-using CGame.Game.Stats;
 
 namespace CGame
 {
@@ -23,10 +24,12 @@ namespace CGame
             Console.Write(inter.ModifiedValue);
 
             var unit = new TestUnit();
-            unit.HealthController.ApplyDamage(100f, DamageType.Basic);
+            unit.ApplyDamage(100f, DamageType.Basic);
             unit.DebugInfo();
-            unit.HealthController.ApplyDamage(100f, DamageType.Magical);
+            unit.ApplyDamage(100f, DamageType.Magical);
             unit.DebugInfo();
+            Console.Write("\n");
+            Console.Write(unit.ToString());
         }
     }
 }

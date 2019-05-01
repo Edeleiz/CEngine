@@ -1,7 +1,7 @@
 using CEngine.Core.Effects;
-using CGame.Game.Stats;
+using CGame.Core.Stats;
 
-namespace CGame.Game.Effects
+namespace CGame.Core.Effects
 {
     public class BasicAttackEffect : BaseEffect
     {

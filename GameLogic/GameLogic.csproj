@@ -39,13 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Game\Effects\BasicAttackEffect.cs" />
-    <Compile Include="Game\Effects\EffectType.cs" />
+    <Compile Include="Core\Effects\BasicAttackEffect.cs" />
+    <Compile Include="Core\Effects\EffectType.cs" />
+    <Compile Include="Core\Objects\BaseUnit.cs" />
+    <Compile Include="Core\Resists\DamageResists.cs" />
+    <Compile Include="Core\Stats\Enum\StatType.cs" />
+    <Compile Include="Core\Stats\Modifiers\Modifiers.cs" />
+    <Compile Include="Core\Stats\UnitStats.cs" />
+    <Compile Include="Game\Battlefield\BattlefieldController.cs" />
+    <Compile Include="Game\Battlefield\BattlefieldModel.cs" />
     <Compile Include="Game\Objects\TestUnit.cs" />
-    <Compile Include="Game\Resists\DamageResists.cs" />
-    <Compile Include="Game\Stats\Enum\StatType.cs" />
-    <Compile Include="Game\Stats\Modifiers\Modifiers.cs" />
-    <Compile Include="Game\Stats\UnitStats.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

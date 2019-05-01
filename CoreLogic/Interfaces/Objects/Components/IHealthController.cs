@@ -6,18 +6,13 @@ using CEngine.Interfaces.Stats;
 
 namespace CEngine.Interfaces.Objects.Components
 {
-    public interface IHealthController : IResistible
+    public interface IHealthController : IDamageable, IResistible
     {
-        IStatController StatController { get; } 
-        float CurrentHealth { get; }
-        float MaxHealth { get; }
-        
-        float ApplyDamage(float damage, object damageType);
+        IStatController StatController { get; }
     }
 
-    public interface IHealthController<T, TK> : IHealthController, IResistible<T> where T : Enum where TK : Enum
+    public interface IHealthController<T, TK> : IHealthController, IDamageable<T>, IResistible<T> where T : Enum where TK : Enum
     {
-        float ApplyDamage(float damage, T damageType);
         new IStatController<TK> StatController { get; } 
     }
 }

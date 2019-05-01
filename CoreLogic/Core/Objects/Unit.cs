@@ -5,13 +5,46 @@ using CEngine.Interfaces.Objects.Units;
 
 namespace CEngine.Core.Objects
 {
-    public class Unit<T> : GameObject, IUnit<T, HealthStatType> where T : Enum
+    public struct BaseUnitProperties
+    {
+        public float BaseHp;
+    }
+    
+    public abstract class Unit<T> : GameObject, IUnit<T> where T : Enum
     {
         protected Unit()
         {
-            
+            Initialize();
         }
 
-        public IHealthController<T, HealthStatType> HealthController { get; protected set; }
+        protected IHealthController<T, HealthStatType> HealthController { get; set; }
+
+        public float CurrentHealth => HealthController.CurrentHealth;
+        public float MaxHealth => HealthController.MaxHealth;
+        
+        public float ApplyDamage(float damage, object damageType)
+        {
+            return HealthController.ApplyDamage(damage, damageType);
+        }
+        
+        public float ApplyDamage(float damage, T damageType)
+        {
+            return HealthController.ApplyDamage(damage, damageType);
+        }
+
+        protected void Initialize()
+        {
+            var props = GetProps(new BaseUnitProperties());
+            InitHealthController(props.BaseHp); 
+        }
+
+        protected abstract void InitHealthController(float baseHp);
+
+        protected abstract BaseUnitProperties GetProps(BaseUnitProperties props);
+
+        public override string ToString()
+        {
+            return this.GetType().ToString() + "(" + HealthController.ToString() + ")";
+        }
     }
 }

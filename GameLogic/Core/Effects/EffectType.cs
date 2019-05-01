@@ -1,4 +1,4 @@
-namespace CGame.Game.Effects
+namespace CGame.Core.Effects
 {
     public enum EffectType
     {
