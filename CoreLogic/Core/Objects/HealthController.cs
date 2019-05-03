@@ -23,7 +23,11 @@ namespace CEngine.Core.Objects
     public class HealthController<T> : IHealthController<T, HealthStatType> where T : Enum
     {
         IStatController IHealthController.StatController => StatController;
+        
+        public HealthStatus CurrentStatus { get; }
 
+        public Action<HealthStatus> OnStatusChange { get; set; }
+        
         /// <summary>
         /// Current health. Can not be greater than Max Health
         /// </summary>
@@ -74,8 +78,33 @@ namespace CEngine.Core.Objects
 
         public float ApplyDamage(float damage, T damageType)
         {
+            var previousHealth = CurrentHealth;
             var finalDamage = CalculatePiercingDamage(damage, damageType);
             CurrentHealth -= finalDamage;
+            
+            if (CurrentHealth < 0)
+            {
+                CurrentHealth = 0;
+            }
+            else if (CurrentHealth > MaxHealth)
+            {
+                CurrentHealth = MaxHealth;
+            }
+
+            if (previousHealth.Equals(CurrentHealth))
+            {
+                return finalDamage;
+            }
+
+            if (CurrentHealth.Equals(0f))
+            {
+                OnStatusChange?.Invoke(HealthStatus.ZeroHp);
+            }
+            else if (CurrentHealth.Equals(MaxHealth))
+            {
+                OnStatusChange?.Invoke(HealthStatus.FullHp);
+            }
+            
             return finalDamage;
         }
 
@@ -124,7 +153,7 @@ namespace CEngine.Core.Objects
 
         private void OnMaxHealthUpdate(float value)
         {
-            if (Math.Abs(CurrentHealth - MaxHealth) < 0.0001f)
+            if (CurrentHealth.Equals(MaxHealth))
             {
                 CurrentHealth = MaxHealth;
             }

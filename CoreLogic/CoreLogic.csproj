@@ -55,10 +55,12 @@
     <Compile Include="Core\Stats\StatController.cs" />
     <Compile Include="Interfaces\Abilities\IAbility.cs" />
     <Compile Include="Interfaces\Effects\IEffect.cs" />
+    <Compile Include="Interfaces\Effects\IEffectual.cs" />
     <Compile Include="Interfaces\Effects\IEffectController.cs" />
     <Compile Include="Interfaces\Objects\Components\IDamageable.cs" />
     <Compile Include="Interfaces\Objects\Components\IHealthController.cs" />
     <Compile Include="Interfaces\Objects\IGameObject.cs" />
+    <Compile Include="Interfaces\Objects\IOwner.cs" />
     <Compile Include="Interfaces\Objects\Units\IUnit.cs" />
     <Compile Include="Interfaces\Resists\IResist.cs" />
     <Compile Include="Interfaces\Resists\IResistible.cs" />

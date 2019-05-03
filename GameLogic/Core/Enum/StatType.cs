@@ -1,4 +1,4 @@
-namespace CGame.Core.Stats
+namespace CGame.Core.Enum
 {
     public enum StatType
     {

@@ -44,7 +44,7 @@ namespace CEngine.Core.Objects
 
         public override string ToString()
         {
-            return this.GetType().ToString() + "(" + HealthController.ToString() + ")";
+            return this.GetType().Name + "(" + HealthController + ")";
         }
     }
 }

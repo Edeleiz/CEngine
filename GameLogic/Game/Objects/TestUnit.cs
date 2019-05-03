@@ -1,5 +1,6 @@
 using System;
 using CEngine.Core.Objects;
+using CGame.Core.Enum;
 using CGame.Core.Objects;
 using CGame.Core.Resists;
 

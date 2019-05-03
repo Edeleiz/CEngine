@@ -20,7 +20,8 @@ namespace CEngine.Core.Objects
         
         public int X { get; set; }
         public int Y { get; set; }
-
+        public OwnerType OwnerType { get; }
+        public IOwner Owner { get; }
         public IEffectController EffectController { get; }
         
         public IStatController<T> GetStats<T>() where T : Enum
@@ -52,11 +53,6 @@ namespace CEngine.Core.Objects
         public IList<IStatController> GetStatsList()
         {
             return _stats.AsReadOnly();
-        }
-
-        public virtual void Update(float timePassed)
-        {
-            
         }
     }
 }

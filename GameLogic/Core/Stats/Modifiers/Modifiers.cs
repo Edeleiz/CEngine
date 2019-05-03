@@ -1,5 +1,6 @@
 using CEngine.Core.Stats;
 using CEngine.Interfaces.Stats;
+using CGame.Core.Enum;
 
 namespace CGame.Core.Stats
 {

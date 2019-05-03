@@ -1,9 +1,11 @@
 ﻿using System;
 using CEngine.Core.Objects;
 using CEngine.Interfaces.Stats;
+using CGame.Core.Enum;
 using CGame.Core.Objects;
 using CGame.Core.Resists;
 using CGame.Core.Stats;
+using CGame.Game.Main;
 using CGame.Game.Objects;
 
 namespace CGame
@@ -30,6 +32,8 @@ namespace CGame
             unit.DebugInfo();
             Console.Write("\n");
             Console.Write(unit.ToString());
+
+            var game = new StartupController();
         }
     }
 }

@@ -41,14 +41,23 @@
   <ItemGroup>
     <Compile Include="Core\Effects\BasicAttackEffect.cs" />
     <Compile Include="Core\Effects\EffectType.cs" />
+    <Compile Include="Core\Enum\DamageType.cs" />
+    <Compile Include="Core\Enum\StatType.cs" />
     <Compile Include="Core\Objects\BaseUnit.cs" />
+    <Compile Include="Core\Objects\IUpdatable.cs" />
     <Compile Include="Core\Resists\DamageResists.cs" />
-    <Compile Include="Core\Stats\Enum\StatType.cs" />
     <Compile Include="Core\Stats\Modifiers\Modifiers.cs" />
     <Compile Include="Core\Stats\UnitStats.cs" />
+    <Compile Include="Game\Battlefield\BattlefieldCellModel.cs" />
     <Compile Include="Game\Battlefield\BattlefieldController.cs" />
     <Compile Include="Game\Battlefield\BattlefieldModel.cs" />
+    <Compile Include="Game\Main\PlayState.cs" />
+    <Compile Include="Game\Main\StartupController.cs" />
+    <Compile Include="Game\Main\Updater.cs" />
     <Compile Include="Game\Objects\TestUnit.cs" />
+    <Compile Include="Game\View\BaseView.cs" />
+    <Compile Include="Game\View\BattlefieldView.cs" />
+    <Compile Include="Game\View\MainView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
